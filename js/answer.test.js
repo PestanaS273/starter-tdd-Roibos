@@ -1,8 +1,10 @@
-const getAnswer = require('./answer')
+const { Rover, Position } = require('./answer')
 
-describe('getting answers', () => {
-  test('it returns 42', () => {
-    const res = getAnswer()
-    expect(res).toBe(42)
+describe('Rover moving forward', () => {
+  test('it should have position y incremented', () => {
+    const rover = new Rover(0, 0);
+    rover.moveForward();
+    expect(rover.position.y).toBe(1);
+    expect(rover.position.x).toBe(0);
   })
 })
