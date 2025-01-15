@@ -5,7 +5,7 @@ class Position {
   }
 }
 
-class Orientation {
+class Compass {
     constructor(orientation) {
         this.orientation = orientation;
     }
@@ -17,13 +17,15 @@ class Rover {
 
     constructor(x, y, orientation) {
         this.position = new Position(x, y);
-        this.orientation = new Orientation(orientation);
+        this.compass = new Compass(orientation);
     }
 
-    moveForward(orientation) {
-        switch (orientation) {
+    moveForward() {
+        switch (this.compass.orientation) {
             case 'N':
+                console.log(this.position.y);
                 this.position.y++;
+                console.log(this.position.y);
                 break;
             case 'E':
                 this.position.x++;
@@ -38,4 +40,4 @@ class Rover {
     }
 }
 
-module.exports = { Rover, Position };
+module.exports = { Rover };

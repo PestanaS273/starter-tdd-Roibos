@@ -1,4 +1,4 @@
-const { Rover, Position } = require('./answer')
+const { Rover } = require('./answer')
 
 describe('Rover moving forward facing all directions', () => {
   test('it should have position y incremented when facing North', () => {
