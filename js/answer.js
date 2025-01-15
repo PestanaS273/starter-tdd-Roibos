@@ -20,7 +20,7 @@ class Rover {
         this.orientation = new Orientation(orientation);
     }
 
-    moveForward() {
+    moveForward(orientation) {
         switch (orientation) {
             case 'N':
                 this.position.y++;
