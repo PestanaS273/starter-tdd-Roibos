@@ -5,15 +5,36 @@ class Position {
   }
 }
 
+class Orientation {
+    constructor(orientation) {
+        this.orientation = orientation;
+    }
+}
+
 class Rover {
     position;
+    orientation;
 
-    constructor(x, y) {
+    constructor(x, y, orientation) {
         this.position = new Position(x, y);
+        this.orientation = new Orientation(orientation);
     }
 
     moveForward() {
-        this.position.y++;
+        switch (orientation) {
+            case 'N':
+                this.position.y++;
+                break;
+            case 'E':
+                this.position.x++;
+                break;
+            case 'S':
+                this.position.y--;
+                break;
+            case 'W':
+                this.position.x--;
+                break;
+        }
     }
 }
 
